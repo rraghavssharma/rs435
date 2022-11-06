@@ -11,13 +11,25 @@
 </head>
 <body>
     <form>
-        <input id="getEmail" type="text" placeholder="Enter Email">
-        <input id="getPassword" type="password" placeholder="Enter password">
-        <button id="loginbtn" type="button" onclick="beginLogin()">LOGIN</button>
-        <button id="registerbtn" type="button" onclick="registerUser()">REGISTER</button>
+        <div>
+            <p>Returning User</p>
+            <input id="getEmail" type="text" placeholder="EnterEmail">
+            <input id="getPassword" type="password" placeholder="Enterpassword">
+            <button id="loginbtn" type="button" onclick="beginLogin()">LOGIN</button>
+            
+        </div>
+        <div>
+            <p>New user</p>
+            <input id="getNewEmail" type="text" placeholder="EnterEmail">
+            <input id="getNewPassword" type="password" placeholder="EnterPassword">
+            <button id="registerbtn" type="button" onclick="registerUser()">REGISTER</button>
+        </div>
+        <p id="insertMsg"></p>
+
+
+
     </form>
 
     <script src="main.js"></script>
-
 </body>
 </html>
