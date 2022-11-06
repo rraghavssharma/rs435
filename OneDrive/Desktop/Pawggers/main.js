@@ -4,11 +4,6 @@ var dictOfUsers = [
     {email: "", password: ""}
 ]
 
-var emptydictOfUsers = [
-    //{email: "raghav4", password:"yellow"},
-    //{email: "Hetang2", password:"blue"},
-    {email: "", password: ""}
-]
 //returning user
 function beginLogin() {
     //get info. from user
@@ -32,21 +27,23 @@ function beginLogin() {
 function registerUser(){
     let registerEmail = document.getElementById("getNewEmail").value;
     let registerPassword = document.getElementById("getNewPassword").value;
+    let sysObj = {email: registerEmail, password: registerPassword}; 
 
+    localStorage.setItem("systemObj", JSON.stringify(sysObj))
+    let sysObj_deserialized = JSON.parse(localStorage.getItem("systemObj"))
+    
     for (let i=0; i <= dictOfUsers.length; i++){
         if(registerEmail == dictOfUsers[i].email){
             alert("email already is use, pick another.");
             return;
         }
         else{
-            dictOfUsers.push({email: registerEmail, password: registerPassword});
+            console.log(sysObj_deserialized)
+            dictOfUsers.push(sysObj_deserialized)
             console.log(dictOfUsers);
             return;
         }
-    }
-
-    
-        
+    }        
 }
 
 
